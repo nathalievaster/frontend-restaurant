@@ -4,7 +4,7 @@
 
     <button class="menu-toggle" (click)="toggleMenu()">☰</button>
 
-    <nav class="nav-links">
+    <nav class="nav-links" [ngClass]="{ 'show': menuOpen }">
       <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Start</a>
       <a routerLink="/menu" routerLinkActive="active" (click)="closeMenu()">Meny</a>
       <a routerLink="/booking" routerLinkActive="active" (click)="closeMenu()">Boka bord</a>
