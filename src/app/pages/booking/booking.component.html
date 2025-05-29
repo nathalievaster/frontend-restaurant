@@ -1,1 +1,39 @@
-<p>booking works!</p>
+<section class="booking-section">
+  <h1>Boka bord</h1>
+
+  <form (ngSubmit)="submitForm()" #form="ngForm">
+    <label>
+      Namn:
+      <input type="text" name="name" [(ngModel)]="booking.name" required />
+    </label>
+
+    <label>
+      E-post:
+      <input type="email" name="email" [(ngModel)]="booking.email" required />
+    </label>
+
+    <label>
+      Antal gäster:
+      <input type="number" name="guests" [(ngModel)]="booking.guests" min="1" required />
+    </label>
+
+    <label>
+      Datum:
+      <input type="date" name="date" [(ngModel)]="booking.date" required />
+    </label>
+
+    <label>
+      Tid:
+      <input type="time" name="time" [(ngModel)]="booking.time" required />
+    </label>
+
+    <button type="submit">Boka</button>
+  </form>
+
+  <div *ngIf="message" class="success">{{ message }}</div>
+  <div *ngIf="error.length > 0" class="error">
+    <ul>
+      <li *ngFor="let err of error">{{ err }}</li>
+    </ul>
+  </div>
+</section>
