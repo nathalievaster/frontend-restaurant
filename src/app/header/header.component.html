@@ -1,1 +1,13 @@
-<p>header works!</p>
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Rolling Sushi</a>
+
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+
+    <nav class="nav-links">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Start</a>
+      <a routerLink="/menu" routerLinkActive="active" (click)="closeMenu()">Meny</a>
+      <a routerLink="/booking" routerLinkActive="active" (click)="closeMenu()">Boka bord</a>
+    </nav>
+  </div>
+</header>
