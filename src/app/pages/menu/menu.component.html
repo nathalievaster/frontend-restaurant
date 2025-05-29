@@ -1,1 +1,20 @@
-<p>menu works!</p>
+<section class="menu-page">
+  <h1>Dagens Meny</h1>
+
+  <ng-container *ngFor="let category of categories">
+    <h2>{{ category }}</h2>
+
+    <div class="menu-category">
+      <div
+        *ngFor="let item of groupedByCategory()[category]"
+        class="menu-card"
+        [class.unavailable]="!item.available"
+      >
+        <h3>{{ item.name }}</h3>
+        <p class="description">{{ item.description || 'Ingen beskrivning' }}</p>
+        <p class="price">{{ item.price }} kr</p>
+        <span *ngIf="!item.available" class="not-available">Ej tillgänglig</span>
+      </div>
+    </div>
+  </ng-container>
+</section>
