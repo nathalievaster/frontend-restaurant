@@ -1,1 +1,29 @@
-<p>footer works!</p>
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <a routerLink="/home" class="logo">Rolling Sushi</a>
+    </div>
+
+    <div>
+      <h4>Adress</h4>
+      <p>Storgatan 24</p>
+      <p>41308 Göteborg</p>
+      <h4>Kontakt</h4>
+      <p>010-xxx xxx xxx</p>
+      <p>Skicka mejl <a routerLink="/booking">här</a></p>
+    </div>
+
+    <div class="open-info">
+      <h4>Öppet:</h4>
+      <p>Sön–Mån 11:00–22:00</p>
+      <p>Fre–Lör 12–sent</p>
+      <p>© {{ currentYear }} Rolling Sushi. Alla rättigheter förbehållna.</p>
+      <div class="social-icons">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-tiktok"></i>
+      </div>
+    </div>
+  </div>
+</footer>
+
