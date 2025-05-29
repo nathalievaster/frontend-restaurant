@@ -1,7 +1,13 @@
-<section class="booking-section">
+<section>
   <h1>Boka bord</h1>
 
   <form (ngSubmit)="submitForm()" #form="ngForm">
+    <div *ngIf="message" class="success">{{ message }}</div>
+  <div *ngIf="error.length > 0" class="error">
+    <ul>
+      <li *ngFor="let err of error">{{ err }}</li>
+    </ul>
+  </div>
     <label>
       Namn:
       <input type="text" name="name" [(ngModel)]="booking.name" required />
@@ -30,10 +36,4 @@
     <button type="submit">Boka</button>
   </form>
 
-  <div *ngIf="message" class="success">{{ message }}</div>
-  <div *ngIf="error.length > 0" class="error">
-    <ul>
-      <li *ngFor="let err of error">{{ err }}</li>
-    </ul>
-  </div>
 </section>
