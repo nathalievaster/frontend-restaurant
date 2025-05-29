@@ -1,6 +1,6 @@
 <main>
   <section class="hero">
-    <img src="/hero.JPEG" alt="Sushi hero" class="hero-bg" />
+    <img src="/hero.JPEG" alt="Flera sushirätter med rökeffekt" class="hero-bg" />
     <div class="hero-overlay">
       <h1>Välkommen till Rolling Sushi</h1>
       <p>En smakresa genom Japan och Sydostasien – förstklassig sushi och eleganta mellanrätter med modern twist.</p>
@@ -14,8 +14,47 @@
   <section class="intro">
     <h2>Asiatisk Fusion i hjärtat av Göteborg</h2>
     <p>
-      Vår meny består av otrolig sushi och delikata smårätter inspirerade av japanska izakaya, koreansk BBQ och thailändska kryddor.
+      Vår meny består av otrolig sushi och delikata smårätter inspirerade av japanska izakaya, koreansk BBQ och
+      thailändska kryddor.
       Kom förbi för en lunch med stil eller boka en helkväll med smaker du aldrig glömmer.
     </p>
   </section>
+
+  <section class="contact-wrapper">
+    <button class="contact-toggle" (click)="toggleContact()">Kontakta oss</button>
+
+    <div class="contact-form-container" *ngIf="showContact">
+      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+        <h3>Kontakta oss</h3>
+
+        <!-- Felmeddelanden -->
+        <div class="error" *ngIf="errors.length > 0">
+          <ul>
+            <li *ngFor="let err of errors">{{ err }}</li>
+          </ul>
+        </div>
+
+        <!-- Bekräftelse -->
+        <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+
+        <div>
+          <input type="text" name="name" [(ngModel)]="contact.name" required placeholder="Ditt namn" />
+        </div>
+
+        <div>
+          <input type="email" name="email" [(ngModel)]="contact.email" placeholder="Din e-post" />
+        </div>
+
+        <div>
+          <textarea name="message" [(ngModel)]="contact.message" rows="5"
+            placeholder="Skriv ditt meddelande här..."></textarea>
+        </div>
+
+        <button class="btn-primary" type="submit">Skicka</button>
+
+    
+      </form>
+    </div>
+  </section>
+
 </main>
