@@ -1,0 +1,84 @@
+.menu-page {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+              url('/background.JPEG') no-repeat center center / cover;
+  color: #fff;
+  min-height: 100vh;
+  padding: 4rem 1rem;
+  font-family: 'Georgia', serif;
+}
+
+.menu-page h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #fdfdfd;
+  letter-spacing: 2px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.menu-page h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  border-bottom: 1px solid #ffcc00;
+  padding-bottom: 0.5rem;
+  margin: 2rem 0 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1em;
+}
+
+.menu-category {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 1em;
+}
+
+.menu-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+
+.menu-card:hover {
+  transform: scale(1.02);
+}
+
+.menu-card.unavailable {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.menu-card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #ffffff;
+  font-weight: 500;
+  border-bottom: 1px solid #555;
+  padding-bottom: 0.5rem;
+}
+
+.menu-card .description {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.5rem 0 1rem;
+}
+
+.menu-card .price {
+  font-size: 1.1rem;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.not-available {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.6rem;
+  background-color: #e63946;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
