@@ -29,20 +29,17 @@ header {
   height: 100px;
   width: auto;
   display: block;
-  opacity: 0.6;
   border-bottom-left-radius: 40px;
   border-top-left-radius: 40px;
   border-bottom-right-radius: 40px;
     transition: 
-    border-radius 0.3s ease,
-    transform 0.3s ease,
-    opacity 0.3s ease;
+    border-radius 0.7s ease,
+    transform 0.7s ease
 }
 
 .logo img:hover {
   border-radius: 20px;
   transform: scale(1.25);
-  opacity: 0.8;  
 }
 
 .menu-toggle {

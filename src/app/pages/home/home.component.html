@@ -6,7 +6,7 @@
       <p>En smakresa genom Japan och Sydostasien – förstklassig sushi och eleganta mellanrätter med modern twist.</p>
       <div class="hero-buttons">
         <a routerLink="/menu" class="btn-primary">Se menyn</a>
-        <a routerLink="/book" class="btn-outline">Boka bord</a>
+        <a routerLink="/booking" class="btn-outline">Boka bord</a>
       </div>
     </div>
   </section>
@@ -20,7 +20,33 @@
     </p>
   </section>
 
+  <section class="menu-inspo">
+    <div class="menu-text">
+      <h2>Den perfekta smakkombinationen</h2>
+      <p>
+        Vår meny är noggrant framtagen för att balansera klassisk japansk precision med livfulla smaker från hela Asien.
+        Du hittar allt från eleganta nigiribitar och smakrika makirullar till heta smårätter och spännande fusionrätter
+        som överraskar. Oavsett om du är nybörjare eller sushikonnässör kommer du hitta något att älska.
+      </p>
+      <p>
+        Vi använder färska råvaror av högsta kvalitet och jobbar med kreativa tekniker som flambering, röksättning
+        och moderna upplägg – allt för att varje tugga ska bli en upplevelse.
+      </p>
+    </div>
+
+    <div class="menu-link-wrapper">
+      <a routerLink="/menu" class="btn-primary">Utforska vår meny</a>
+    </div>
+
+  </section>
+
   <section class="contact-wrapper">
+    <h2>Har du några frågor eller funderingar?</h2>
+    <div class="questions-text">
+      <p>Släng iväg ett mejl till oss, oavsett om det handlar om kvarglömda solglasögon, frågor om vår meny,
+        allergier, större bokningar, kärleksbrev till personalen... You name it!
+      </p>
+    </div>
     <button class="contact-toggle" (click)="toggleContact()">Kontakta oss</button>
 
     <div class="contact-form-container" *ngIf="showContact">
@@ -52,7 +78,7 @@
 
         <button class="btn-primary" type="submit">Skicka</button>
 
-    
+
       </form>
     </div>
   </section>
