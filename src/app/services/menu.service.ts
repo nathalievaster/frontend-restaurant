@@ -15,7 +15,7 @@ export interface MenuItem {
   providedIn: 'root'
 })
 export class MenuService {
-  private apiUrl = 'http://localhost:5000/api/menu';
+  private apiUrl = 'https://rest-restaurant.onrender.com/api/menu';
 
   constructor(private http: HttpClient) {}
 

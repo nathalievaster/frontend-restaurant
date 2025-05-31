@@ -1,8 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* Hero Section */
 .hero {
   position: relative;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url('/hero.JPEG') no-repeat center center / cover;
+              url('/hero.JPEG') no-repeat center center / cover;
   min-height: 100vh;
   overflow: hidden;
   display: flex;
@@ -16,30 +22,39 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 90%;
+  width: 100%;
   height: 100%;
   color: white;
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 2rem;
 }
 
-.hero-overlay h1 {
-  font-size: 3rem;
+.hero-text {
+  width: 100%;
+  max-width: 700px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* Headings */
+.hero-text h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
   margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.hero-overlay p {
-  font-size: 1.2rem;
+/* Paragraph */
+.hero-text p {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   max-width: 600px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
   justify-content: center;
@@ -50,7 +65,6 @@
 
 .hero-buttons a,
 button {
-  margin: 0 1rem;
   padding: 0.75rem 1.5rem;
   border-radius: 4px;
   font-weight: bold;
@@ -58,9 +72,19 @@ button {
   font-size: 1.1em;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 500px) {
   .hero-buttons {
     flex-direction: column;
+  }
+
+  .hero-text {
+    padding: 1rem 0.5rem;
+  }
+
+  .hero-buttons a,
+  button {
+    width: 100%;
+    max-width: 250px;
   }
 }
 

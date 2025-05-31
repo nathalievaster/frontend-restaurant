@@ -20,7 +20,7 @@ export interface BookingResponse {
   providedIn: 'root'
 })
 export class BookingService {
-  private apiUrl = 'http://localhost:5000/api/bookings';
+  private apiUrl = 'https://rest-restaurant.onrender.com/api/bookings';
 
   constructor(private http: HttpClient) {}
 

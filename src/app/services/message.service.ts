@@ -12,7 +12,7 @@ export interface ContactMessage {
   providedIn: 'root'
 })
 export class MessageService {
-  private apiUrl = 'http://localhost:5000/api/messages'; 
+  private apiUrl = 'https://rest-restaurant.onrender.com/api/messages'; 
 
   constructor(private http: HttpClient) {}
 
