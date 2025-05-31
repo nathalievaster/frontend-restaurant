@@ -82,3 +82,23 @@
   border-radius: 4px;
   font-size: 0.85rem;
 }
+
+@media (max-width: 400px) {
+  .menu-category {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5em;
+  }
+
+  .menu-card {
+    padding: 1rem;
+  }
+
+  .menu-page h1 {
+    font-size: 2rem;
+  }
+
+  .menu-page h2 {
+    font-size: 1.5rem;
+  }
+}
