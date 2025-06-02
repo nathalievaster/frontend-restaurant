@@ -30,7 +30,11 @@
 
     <label>
       Tid:
-      <input type="time" name="time" [(ngModel)]="booking.time" [min]="timeMin" [max]="timeMax" />
+      <select name="time" [(ngModel)]="booking.time">
+        <option *ngFor="let time of availableTimes" [value]="time">
+          {{ time }}
+        </option>
+      </select>
     </label>
 
     <button type="submit">Boka</button>

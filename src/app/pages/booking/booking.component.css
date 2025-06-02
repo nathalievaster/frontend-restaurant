@@ -38,7 +38,8 @@ form label {
     font-weight: 600;
 }
 
-form input {
+form input,
+form select {
     width: 100%;
     padding: 0.5rem;
     margin-top: 0.3rem;
