@@ -19,6 +19,26 @@ export class BookingComponent {
     time: ''
   };
 
+  timeMin: string = '00:00';
+  timeMax: string = '23:59';
+
+  onDateChange() {
+    if (!this.booking.date) return;
+
+    const selectedDate = new Date(this.booking.date);
+    const day = selectedDate.getDay(); // 0 = söndag, ..., 6 = lördag
+
+    if (day >= 0 && day <= 4) {
+      // Sön–Tors: 11:00–22:00
+      this.timeMin = '11:00';
+      this.timeMax = '22:00';
+    } else if (day === 5 || day === 6) {
+      // Fre–Lör: 12:00–23:59
+      this.timeMin = '12:00';
+      this.timeMax = '23:59';
+    }
+  }
+
   // Variabel för lyckade meddelanden, kan vara string eller null och sätts till null som start
   message: string | null = null;
   // Lagrar felmeddelanden i array
