@@ -12,7 +12,8 @@ Applikationen kommunicerar direkt med backend-tjänsten via ett RESTful API.
 
 ## Kommunikation med REST-API:t
 
-All data som visas eller skickas i frontend hämtas/asynkront skickas till backend via HTTP-anrop med `fetch()`.
+All data som visas eller skickas i frontend hanteras asynkront via HTTP-anrop med Angulars `HttpClient`-modul. Den används för att skicka GET-, POST-, PUT- och DELETE-anrop till backendens REST-API. All kommunikation sker i JSON-format.
+
 
 ### Meny
 
