@@ -51,27 +51,36 @@ export class BookingComponent {
     }
   }
 
-  generateTimeSlots(start: string, end: string, intervalMinutes: number): string[] {
-    const times: string[] = [];
+generateTimeSlots(start: string, end: string, intervalMinutes: number): string[] {
+  const times: string[] = [];
 
-    let [startHour, startMin] = start.split(':').map(Number);
-    let [endHour, endMin] = end.split(':').map(Number);
+  // Dela upp start- och sluttid i timmar och minuter
+  let [startHour, startMin] = start.split(':').map(Number);
+  let [endHour, endMin] = end.split(':').map(Number);
 
-    const current = new Date();
-    current.setHours(startHour, startMin, 0, 0);
+  // Skapa ett Date-objekt för starttiden
+  const current = new Date();
+  current.setHours(startHour, startMin, 0, 0);
 
-    const endTime = new Date();
-    endTime.setHours(endHour, endMin, 0, 0);
+  // Skapa ett Date-objekt för sluttiden
+  const endTime = new Date();
+  endTime.setHours(endHour, endMin, 0, 0);
 
-    while (current <= endTime) {
-      const hours = current.getHours().toString().padStart(2, '0');
-      const minutes = current.getMinutes().toString().padStart(2, '0');
-      times.push(`${hours}:${minutes}`);
-      current.setMinutes(current.getMinutes() + intervalMinutes);
-    }
-
-    return times;
+  // Loopar och skapar tider så länge vi inte har passerat sluttiden
+  while (current <= endTime) {
+    // Hämta timmar och minuter, formaterat som "HH:mm"
+    const hours = current.getHours().toString().padStart(2, '0');
+    const minutes = current.getMinutes().toString().padStart(2, '0');
+    
+    // Lägg till tiden i listan
+    times.push(`${hours}:${minutes}`);
+    
+    // Gå framåt med angivet intervall
+    current.setMinutes(current.getMinutes() + intervalMinutes);
   }
+
+  return times;
+}
 
   submitForm() {
     // Töm gamla felmeddelanden och meddelanden
